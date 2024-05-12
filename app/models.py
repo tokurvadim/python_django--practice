@@ -4,9 +4,9 @@ from django.contrib.auth.models import User
 
 
 
-class Employee(models.Model):
+"""class Employee(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    img = models.ImageField(upload_to='profile_images/', default='media/profile_images/base/user.svg')
+    img = models.ImageField(upload_to='profile_images/', default='media/profile_images/base/user.svg')"""
 
 
 
@@ -28,7 +28,7 @@ class Vacation(models.Model):
         ON_READY = 'RD', _('On ready')
         APPROVED = 'AP', _('Approved')
 
-    user_id = models.ForeignKey(Employee, on_delete=models.CASCADE)
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
     type = models.CharField(max_length=2, choices=Types.choices)
     start = models.DateField()
     end = models.DateField()
