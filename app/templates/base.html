@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная</title>
+</head>
+<body>
+    <div id="container">
+        <nav class="nav-footer_up-down-block">
+            <a href="{% url '' %}" class="a_nav-link a_link"></a>
+            <a href="" class="a_nav-link a_profile-link a_link">
+                <img src="" alt="" class="img_profile-image">
+                <p class="p_profile-name">{{request.user.first_name}} {{request.user.last_name}}</p>
+            </a>
+            <a href="{% url 'logout' %}" class="a_nav-link a_link">
+                <img src="" alt="" class="img_profile-logout img_icon">
+            </a>
+        </nav>
+        <main>
+            {% block main %}{% endblock %}
+        </main>
+        <footer class="nav-footer_up-down-block">
+            Компания "ТКИС РУС". Все права защищены
+        </footer>
+    </div>
+</body>
+</html>
