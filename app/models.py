@@ -4,12 +4,14 @@ from django.contrib.auth.models import User
 
 
 
-"""class Employee(models.Model):
+class Employee(models.Model):
+    class Department(models.TextChoices):
+        IT = 'IT', _('IT')
+        ENGINEERS = 'EN', _('Engineers')
+        
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    img = models.ImageField(upload_to='profile_images/', default='media/profile_images/base/user.svg')"""
-
-
-
+    img = models.ImageField(upload_to='profile_images/', default='media/profile_images/base/user.svg')
+    department = models.CharField(max_length=2, choices=Department.choices)
 
 
 
